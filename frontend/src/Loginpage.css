@@ -1,0 +1,305 @@
+/* ===== Shared colors and sizes: change these to restyle everything ===== */
+:root {
+  --primary: #0f7a4a;        /* deep green: buttons, links, accents */
+  --primary-dark: #0b5e39;   /* button hover */
+  --gold: #e8b931;           /* small highlight */
+  --text: #16201b;           /* main text */
+  --muted: #5d6b64;          /* secondary text */
+  --border: #dde4e0;
+  --input-bg: #f3f6f4;
+  --page-bg: #f7f8f6;
+  --error: #c0392b;
+  --radius: 14px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+/* ===== Page layout: two columns side by side ===== */
+.login-page {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ===== Left panel ===== */
+.login-brand {
+  padding: 64px 72px;
+  background: linear-gradient(160deg, #ffffff 0%, #eaf5ee 55%, #cfe9da 100%);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--gold);
+  font-size: 26px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.brand-headline {
+  font-size: 56px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 12ch;
+}
+
+.brand-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+/* The row of three small boxes */
+.feature-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 24px;
+  max-width: 36rem;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.feature {
+  padding: 18px 20px;
+}
+
+.feature + .feature {
+  border-left: 1px solid var(--border);
+}
+
+.feature-title {
+  font-weight: 600;
+}
+
+.feature-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ===== Right panel ===== */
+.login-form-side {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 80px 24px 40px;
+}
+
+.help-link {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.help-link a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* The white form card */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 20px 50px rgba(15, 40, 28, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.card-text {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 8px 0 24px;
+}
+
+.field-label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: var(--error);
+}
+
+.field-input {
+  width: 100%;
+  padding: 13px 18px;
+  font-size: 16px; /* 16px stops iPhones from zooming in on tap */
+  font-family: inherit;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 122, 74, 0.15);
+  background: #ffffff;
+}
+
+/* Show/Hide button sits inside the password box */
+.password-wrap {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 11px;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.forgot-link {
+  align-self: flex-end;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: -8px;
+  margin-bottom: 20px;
+}
+
+.error-msg {
+  background: #fdecea;
+  color: var(--error);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.signin-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #ffffff;
+  background: var(--primary);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.signin-btn:hover {
+  background: var(--primary-dark);
+}
+
+.signin-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.card-footer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 22px;
+}
+
+.card-footer a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ===== Phones and small tablets: stack the panels ===== */
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-brand {
+    padding: 32px 24px;
+    border-right: none;
+  }
+
+  .brand-logo {
+    margin-bottom: 8px;
+  }
+
+  .brand-headline {
+    font-size: 36px;
+  }
+
+  /* Keep the form close to the top on phones: hide the long pitch */
+  .brand-text,
+  .feature-strip,
+  .login-brand .eyebrow {
+    display: none;
+  }
+
+  .login-form-side {
+    padding: 8px 16px 40px;
+  }
+
+  .help-link {
+    position: static;
+    margin-bottom: 16px;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+  }
+}

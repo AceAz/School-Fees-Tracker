@@ -1,3 +1,4 @@
+// @ts-ignore React dependencies and typings are supplied by the app environment.
 import { useEffect, useMemo, useState, FormEvent } from "react"
 // @ts-ignore CSS modules are handled by the bundler.
 import './App.css'
